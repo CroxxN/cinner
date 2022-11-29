@@ -7,8 +7,8 @@ use std::{
     str::FromStr,
 };
 
-struct cin;
-struct cout;
+pub struct cin;
+pub struct cout;
 
 impl<T> Shl<T> for cout
 where
@@ -33,9 +33,20 @@ where
         cin
     }
 }
-fn main() {
-    let mut holder = String::new();
-    let mut another: f32 = 0.0;
-    cin >> &mut holder >> &mut another;
-    cout << holder << another;
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn cout_test() {
+        let holder = 12;
+        let string_holder = String::from("Working");
+        cout << "This is working" << "\n" << holder << "\n" << string_holder;
+    }
+    #[test]
+    fn cin_test() {
+        let mut holder = 0;
+        cin >> &mut holder;
+    }
 }
