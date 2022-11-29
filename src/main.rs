@@ -1,8 +1,8 @@
-#![allow(non_camel_case_types)]
 #![allow(unused_must_use)]
+#![allow(non_camel_case_types)]
+
 use std::{
-    borrow::BorrowMut,
-    fmt::{self, Debug, LowerHex, Octal},
+    fmt,
     ops::{Shl, Shr},
     str::FromStr,
 };
@@ -21,24 +21,21 @@ where
     }
 }
 
-impl<T> Shr<T> for cin
+impl<T> Shr<&mut T> for cin
 where
-    T: BorrowMut<T> + FromStr + Debug,
+    T: FromStr + Default,
 {
     type Output = cin;
-    fn shr(self, mut consumer: T) -> Self::Output {
+    fn shr(self, consumer: &mut T) -> Self::Output {
         let mut temp_string = String::new();
-        std::io::stdin()
-            .read_line(temp_string.borrow_mut())
-            .unwrap();
-
-        let mut things = temp_string.parse::<T>().expect("This shit cannot work");
-        consumer = things;
+        std::io::stdin().read_line(&mut temp_string).unwrap();
+        *consumer = temp_string.trim().parse::<T>().unwrap_or_default();
         cin
     }
 }
 fn main() {
-    let mut holder: i32;
-    cin >> holder;
-    cout << holder;
+    let mut holder = String::new();
+    let mut another: f32 = 0.0;
+    cin >> &mut holder >> &mut another;
+    cout << holder << another;
 }
