@@ -42,7 +42,6 @@ fn main(){
     let mut i = 0;
     cin >> &mut i;
     cout << i << "\n";
-    cout << "Hello World\n";
 }
 ```
 ### As opposed to:
@@ -69,4 +68,4 @@ fn main(){
 ## If you have any suggestions, `DCDA`
 
 
-© 2022 Sarad Gaihre (Chronos Ltd.)
+© 2022 Sarad (Chronos Ltd.)
