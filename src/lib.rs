@@ -1,4 +1,3 @@
-#![allow(unused_must_use)]
 #![allow(non_camel_case_types)]
 
 use std::{
@@ -41,12 +40,12 @@ mod tests {
     #[test]
     fn cout_test() {
         let holder = 12;
-        let string_holder = String::from("Working");
-        cout << "This is working" << "\n" << holder << "\n" << string_holder;
+        // let string_holder = String::from("Working");
+        let _ = cout << holder;
     }
     #[test]
     fn cin_test() {
         let mut holder = 0;
-        cin >> &mut holder;
+        let _ = cin >> &mut holder;
     }
 }
