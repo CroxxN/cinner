@@ -1,6 +1,6 @@
 [package]
 name = "cinner"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["CroxxN saradgaihre19@gmail.com"]
 description = "C++ style std input and std output with cin and cout"

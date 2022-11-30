@@ -40,8 +40,8 @@ use cinner::{cin, cout};
 
 fn main(){
     let mut i = 0;
-    cin >> &mut i;
-    cout << i << "\n";
+    let _ = cin >> &mut i;
+    let _ = cout << i << "\n";
 }
 ```
 ### As opposed to:
@@ -60,8 +60,8 @@ use cinner::{cin, cout};
 fn main(){
     let mut i = 0;
     let mut j = 0_f32;
-    cin >> &mut i >> &mut j;
-    cout << i << "\n";
+    let _ = cin >> &mut i >> &mut j;
+    let _ = cout << i << "\n";
 }
 ```
 
