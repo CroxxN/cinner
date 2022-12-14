@@ -9,9 +9,12 @@ use std::{
 pub struct cin;
 pub struct cout;
 
+#[allow(non_upper_case_globals)]
+pub static endl: char = '\n';
+
 impl<T> Shl<T> for cout
 where
-    T: fmt::Display,
+    T: fmt::Display + fmt::Display,
 {
     type Output = cout;
     fn shl(self, printer: T) -> Self::Output {
@@ -41,7 +44,7 @@ mod tests {
     fn cout_test() {
         let holder = 12;
         // let string_holder = String::from("Working");
-        let _ = cout << holder;
+        let _ = cout << holder << "Make" << endl;
     }
     #[test]
     fn cin_test() {
