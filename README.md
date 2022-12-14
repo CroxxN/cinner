@@ -67,5 +67,8 @@ fn main(){
 
 ## If you have any suggestions, `DCDA`
 
+# Updates
+
+- Cinner now supports "endl" functionality
 
 © 2022 Sarad (Chronos Ltd.)
