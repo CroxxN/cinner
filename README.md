@@ -13,7 +13,7 @@
 
 - Because I didn't have anything to do
 
-- Because ~~I'm a C++ programmer~~ I like C++ style
+- Because ~~I'm a C++ programmer~~ I like C++ IO style
 
 ### Also, I wanted to learn more "advanced" Rust lmao
 
@@ -40,8 +40,9 @@ use cinner::{cin, cout};
 
 fn main(){
     let mut i = 0;
-    let _ = cin >> &mut i;
-    let _ = cout << i << "\n";
+    // Must assign, even if to a void variable. Rust linter shouts about unused result otherwise.
+    _ = cin >> &mut i;
+    _ = cout << i << "\n";
 }
 ```
 ### As opposed to:
@@ -60,8 +61,8 @@ use cinner::{cin, cout};
 fn main(){
     let mut i = 0;
     let mut j = 0_f32;
-    let _ = cin >> &mut i >> &mut j;
-    let _ = cout << i << "\n";
+    _ = cin >> &mut i >> &mut j;
+    _ = cout << i << "\n";
 }
 ```
 
@@ -70,5 +71,3 @@ fn main(){
 # Updates
 
 - Cinner now supports "endl" functionality
-
-© 2022 Sarad (Chronos Ltd.)
